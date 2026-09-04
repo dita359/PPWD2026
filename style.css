@@ -1,9 +1,11 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -12,6 +14,7 @@ body {
     background-color: #f1f5f9;
 }
 
+/* Header */
 .header {
     background: linear-gradient(135deg, #8b6fb3, #6d5591);
     color: #ffffff;
@@ -36,6 +39,7 @@ body {
     font-size: 14px;
 }
 
+/* Navigasi */
 .nav {
     background-color: #2e2440;
     text-align: center;
@@ -54,6 +58,7 @@ body {
     color: #d8c3f5;
 }
 
+/* Konten Utama */
 .konten {
     max-width: 800px;
     margin: 30px auto;
@@ -88,6 +93,7 @@ body {
     margin-bottom: 12px;
 }
 
+/* Daftar Hobi */
 .daftar-hobi {
     list-style: none;
     padding: 0;
@@ -111,6 +117,7 @@ body {
     border-bottom: none;
 }
 
+/* Tabel Grup Musik */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -134,6 +141,11 @@ td {
     background-color: #ffffff;
 }
 
+tr:nth-child(even) td {
+    background-color: #f5f0fa;
+}
+
+/* Formulir Kontak */
 form label {
     display: block;
     color: #000000;
@@ -175,6 +187,7 @@ form button:hover {
     transform: scale(1.05);
 }
 
+/* Footer */
 .footer {
     background-color: #2e2440;
     color: #ffffff;
