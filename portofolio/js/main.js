@@ -1,75 +1,56 @@
-// ========== 1. TYPING EFFECT ==========
+const theme = document.getElementById('theme');
 
-const typingText = document.getElementById('typing-text');
-const names = ['Ahmad Fauzi', 'Web Developer', 'Mahasiswa SI'];
-
-let nameIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-
-function typeEffect() {
-    const currentName = names[nameIndex];
-
-    if (isDeleting) {
-        typingText.textContent = currentName.substring(0, charIndex - 1);
-        charIndex--;
-    } else {
-        typingText.textContent = currentName.substring(0, charIndex + 1);
-        charIndex++;
-    }
-
-    let delay = isDeleting ? 50 : 100;
-
-    if (!isDeleting && charIndex === currentName.length) {
-        delay = 2000;
-        isDeleting = true;
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        nameIndex = (nameIndex + 1) % names.length;
-        delay = 500;
-    }
-
-    setTimeout(typeEffect, delay);
+if (localStorage.getItem('darkMode') === 'true') {
+  document.body.classList.add('dark');
+  theme.textContent = '☀';
 }
 
-typeEffect();
+theme.onclick = () => {
+  document.body.classList.toggle('dark');
 
+  const dark = document.body.classList.contains('dark');
 
-// ========== 2. GENERATE PROJECT CARDS ==========
+  localStorage.setItem('darkMode', dark);
+  theme.textContent = dark ? '☀' : '☾';
+};
 
-const projects = [
-    {
-        title: 'Website Profil',
-        desc: 'Website profil dengan HTML & CSS',
-        image: 'https://via.placeholder.com/300x200/2563eb/fff?text=Profil'
-    },
-    {
-        title: 'Kalkulator JS',
-        desc: 'Kalkulator interaktif',
-        image: 'https://via.placeholder.com/300x200/2563eb/fff?text=Kalkulator'
-    },
-    {
-        title: 'Form Interaktif',
-        desc: 'Form pendaftaran dengan validasi',
-        image: 'https://via.placeholder.com/300x200/2563eb/fff?text=Form'
+const form = document.getElementById('contactForm');
+
+if (form) {
+  form.onsubmit = async e => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Name, email, and message must be filled in!');
+      return;
     }
-];
 
-const projectGrid = document.getElementById('project-grid');
+    const formData = new FormData(form);
 
-projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'project-card';
+    try {
+      const response = await fetch(
+        'https://formsubmit.co/ajax/h1101251028@student.untan.ac.id',
+        {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }
+      );
 
-    card.innerHTML = `
-        <img src="${project.image}" alt="${project.title}">
-        <h3>${project.title}</h3>
-        <p>${project.desc}</p>
-    `;
-
-    card.addEventListener('click', () => {
-        alert(`Anda memilih proyek: ${project.title}`);
-    });
-
-    projectGrid.appendChild(card);
-});
+      if (response.ok) {
+        alert('Message sent successfully. Thank you!');
+        form.reset();
+      } else {
+        alert('Message could not be sent. Please try again.');
+      }
+    } catch (error) {
+      alert('There was an error sending your message.');
+    }
+  };
+}
