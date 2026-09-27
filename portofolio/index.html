@@ -1,91 +1,89 @@
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portofolio Saya</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Utin Dita Aryana | Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Navigasi -->
+<nav>
+  <a href="index.html" class="logo">UD</a>
 
-    <nav>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <button id="theme">☾</button>
+  </div>
+</nav>
 
-        <div class="container">
+<main>
 
-            <div class="logo">MyPortofolio</div>
+  <section class="hero">
 
-            <ul class="nav-links">
+    <div class="hero-image">
+      <img src="images/me.jpeg" alt="Foto profil">
+    </div>
 
-                <li><a href="index.html" class="active">Home</a></li>
+    <div class="hero-text">
 
-                <li><a href="about.html">About</a></li>
+      <h1>WELCOME!</h1>
 
-                <li><a href="contact.html">Contact</a></li>
+      <p>
+       A personal portofolio where I share about myself, my interests, experiences, 
+       and journey as an Information Systems student.
+      </p>
 
-            </ul>
+      <a href="about.html" class="btn">Learn more</a>
 
+    </div>
+
+  </section>
+
+  <section class="experience">
+
+    <div class="section-top">
+      <span class="eyebrow">SELECTED EXPERIENCE</span>
+      <h2>MY EXPERIENCE</h2>
+    </div>
+
+    <div class="experience-grid">
+
+      <article class="experience-card">
+        <img src="images/infest.jpeg" alt="Infest">
+
+        <div class="card-info">
+          <h3>Infest</h3>
+          <p>I learned many new things through Infest when I first started university.</p>
         </div>
+      </article>
 
-    </nav>
+      <article class="experience-card">
+        <img src="images/HMSI.jpeg" alt="MLT">
 
-    <!-- Hero Section -->
-
-    <section class="hero">
-
-        <div class="container">
-
-            <div class="hero-content">
-
-                <h1>Halo, Saya <span id="typing-text"></span></h1>
-
-                <p>Mahasiswa Sistem Informasi</p>
-
-                <a href="contact.html" class="btn">Hubungi Saya</a>
-
-            </div>
-
+        <div class="card-info">
+          <h3>HMSI</h3>
+          <p>Participating in HMSI activities.</p>
         </div>
+      </article>
 
-    </section>
+    </div>
 
-    <!-- Proyek Saya -->
+  </section>
 
-    <section class="projects">
+  <section class="quote">
+    <span>KEEP LEARNING · KEEP CREATING</span>
+    <h2>Learning, creating,<br>and growing step by step.</h2>
+  </section>
 
-        <div class="container">
+</main>
 
-            <h2>Proyek Saya</h2>
+<footer>© 2026 Utin Dita Aryana. All rights reserved.</footer>
 
-            <div class="project-grid" id="project-grid">
-
-                <!-- Data proyek akan diisi otomatis oleh JavaScript -->
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>&copy; 2026 MyPortofolio</p>
-
-    </footer>
-
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 
 </body>
-
 </html>
