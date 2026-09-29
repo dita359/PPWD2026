@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset = "UTF-8">
+    <meta name= "viewport" content = "width = device-width, initial-scale=1.0">
+    <title>Daftar Belanja</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+
+<Body>
+
+<header class="header">
+    <h1>Aplikasi Daftar Belanja</h1>
+    <p>Nama: Utin Dita Aryana   |   Nim: H1101251028</p>
+</header>
+
+<main>
+    <section>
+        <h2>Daftar Barang</h2>
+         <div class="input">
+            <input id="input_nama" placeholder="Masukkan barang">
+            <button onclick="tambah_nama()">Tambah</button>
+        </div>
+
+        <p>Item aktif: <b id= "count_nama">0</b></p>
+        <ul id="list_nama"></ul>
+
+        <button class="hapus" onclick="hapusSemua_barang()">
+            Hapus Semua
+        </button>
+    </section>
+</main>
+
+<footer>
+    <p>Pratikum Pemprograman Web Dasar | UTS </p>
+</footer>
+
+<script>src="script.js"</script>
+
+</Body>
