@@ -18,7 +18,7 @@ function tambah_nama() {
     tampil_nama();
 }
 
-// Menampilkan daftar nama
+// Menampilkan daftar namaa
 function tampil_nama() {
     let list = document.getElementById("list_nama");
     let jumlah = 0;
